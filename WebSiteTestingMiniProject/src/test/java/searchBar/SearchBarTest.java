@@ -10,6 +10,7 @@ import static org.testng.Assert.assertTrue;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -100,7 +101,7 @@ public class SearchBarTest {
 		WebElement searchBar = driver.findElement(By.xpath("//*[@id=\"gh-ac\"]"));
 		searchBar.sendKeys(searchTerm1);
 		searchBar.submit();
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 				
 		searchBar = driver.findElement(By.xpath("//*[@id=\"gh-ac\"]"));
 		String searchTerm2 = "GTX 1080Ti";
@@ -113,6 +114,55 @@ public class SearchBarTest {
 		Integer NumberOfListings = Integer.parseInt(resultsHeader.getText().replaceAll(" results", ""));
 		
 		assertTrue(NumberOfListings > 0);
+	}
+	
+	@Test(enabled = true)
+	public void TC_SB_006()
+	{
+		String shortSearchTerm = "a";
+		WebElement searchBar = driver.findElement(By.xpath("//*[@id=\"gh-ac\"]"));
+		searchBar.sendKeys(shortSearchTerm);
+		searchBar.submit();
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
+		String expected_error_message_substring = "The request contains expensive keywords";
+		WebElement error_message_element = driver.findElement(By.xpath("//div[@class='s-error']/div[1]/p"));
+		assertTrue(error_message_element.getText().contains(expected_error_message_substring));
+	}
+	
+	@Test(enabled = true)
+	public void TC_SB_007()
+	{
+		
+		String LongSearchTerm = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+		WebElement searchBar = driver.findElement(By.xpath("//*[@id=\"gh-ac\"]"));
+		
+		//use JavascriptExecutor to send large amount of text to searchBar faster
+		((JavascriptExecutor)driver).executeScript("arguments[0].value = arguments[1];", searchBar, LongSearchTerm);
+		searchBar.submit();
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
+		String expected_error_message_substring = "The request contains expensive keywords";
+		WebElement error_message_element = driver.findElement(By.xpath("//div[@class='s-error']/div[1]/p"));
+		assertTrue(error_message_element.getText().contains(expected_error_message_substring));
+	}
+	
+	@Test(enabled = true)
+	public void TC_SB_008()
+	{
+		
+		String LongSearchTerm = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+		WebElement searchBar = driver.findElement(By.xpath("//*[@id=\"gh-ac\"]"));
+		
+		//use JavascriptExecutor to send large amount of text to searchBar faster
+		((JavascriptExecutor)driver).executeScript("arguments[0].value = arguments[1];", searchBar, LongSearchTerm);
+		WebElement searchButton = driver.findElement(By.xpath("//*[@id='gh-btn']"));
+		searchButton.click();
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
+		String expected_error_message_substring = "The request contains expensive keywords";
+		WebElement error_message_element = driver.findElement(By.xpath("//div[@class='s-error']/div[1]/p"));
+		assertTrue(error_message_element.getText().contains(expected_error_message_substring));
 	}
 
 	@AfterTest
