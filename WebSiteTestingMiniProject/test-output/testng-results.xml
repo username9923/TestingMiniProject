@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="46577" started-at="2018-06-02T08:56:24Z" finished-at="2018-06-02T08:57:11Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="46577" started-at="2018-06-02T08:56:24Z" finished-at="2018-06-02T08:57:11Z">
+      <class name="searchBar.SearchBarTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="setUp" is-config="true" duration-ms="6343" started-at="2018-06-02T18:56:24Z" finished-at="2018-06-02T18:56:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="5122" started-at="2018-06-02T18:56:31Z" finished-at="2018-06-02T18:56:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_SB_001()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_001" duration-ms="4328" started-at="2018-06-02T18:56:36Z" finished-at="2018-06-02T18:56:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_SB_001 -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="1944" started-at="2018-06-02T18:56:40Z" finished-at="2018-06-02T18:56:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_SB_002()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_002" duration-ms="4530" started-at="2018-06-02T18:56:42Z" finished-at="2018-06-02T18:56:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_SB_002 -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="1861" started-at="2018-06-02T18:56:47Z" finished-at="2018-06-02T18:56:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_SB_003()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_003" duration-ms="3340" started-at="2018-06-02T18:56:48Z" finished-at="2018-06-02T18:56:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_SB_003 -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="2399" started-at="2018-06-02T18:56:52Z" finished-at="2018-06-02T18:56:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_SB_004()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_004" duration-ms="7065" started-at="2018-06-02T18:56:54Z" finished-at="2018-06-02T18:57:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_SB_004 -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="1642" started-at="2018-06-02T18:57:01Z" finished-at="2018-06-02T18:57:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_SB_005()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_005" duration-ms="6767" started-at="2018-06-02T18:57:03Z" finished-at="2018-06-02T18:57:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_SB_005 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="tearDown" is-config="true" duration-ms="1188" started-at="2018-06-02T18:57:10Z" finished-at="2018-06-02T18:57:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- searchBar.SearchBarTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
