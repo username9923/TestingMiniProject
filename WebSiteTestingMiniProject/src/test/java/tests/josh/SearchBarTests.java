@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
-public class SeachBarTests {
+public class SearchBarTests {
 	WebDriver driver;
 	
 	@BeforeMethod
