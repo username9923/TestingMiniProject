@@ -19,7 +19,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class SearchBarTest {
+public class SearchBarTest1 {
 	String configFilePath = "src/test/java/config.properties";
 	Properties config = new Properties();
 
