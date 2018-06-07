@@ -30,6 +30,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.Runtime;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class HomePageUITests {
 	String configFilePath = "src/test/java/config.properties";
@@ -46,6 +47,9 @@ public class HomePageUITests {
 	public void beforeMethod() {
 		driver = new ChromeDriver();
 		driver.get("https://www.ebay.com.au/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	}
 
 	@AfterMethod
