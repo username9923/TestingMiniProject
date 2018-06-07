@@ -81,19 +81,17 @@ public class HomePageSearchBarSuggestionsTests {
 		searchBar.sendKeys("c");
 		
 		WebElement suggestionsMenu = null;
-		System.out.println("mark 1");
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		try {
 			suggestionsMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"ui-id-1\"]")));
 			wait.until(ExpectedConditions.visibilityOf(suggestionsMenu));
-			System.out.println("got menu 1");
 		} catch (TimeoutException e) {
 			System.out.println("Suggestions Timeout Exception 1");
 		}
 		assertTrue(suggestionsMenu.isDisplayed());
 		
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}

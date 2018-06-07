@@ -54,7 +54,7 @@ public class SearchBarTest2 {
 		String searchTerm = "Headphones";
 		String searchURL = "https://www.ebay.com.au/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=" + searchTerm + "&_sacat=0";
 		driver.navigate().to(searchURL);
-		WebElement resultsElement = driver.findElement(By.xpath("//*[@id=\"srp-river-results-SEARCH_STATUS_MODEL_V2-w0\"]/div[2]/div[1]/div[1]/h1"));
+		WebElement resultsElement = driver.findElement(By.xpath("//h1[contains(text(),'result')]"));
 		assertNotEquals("0 results",resultsElement.getText());
 	}
 	
@@ -66,7 +66,7 @@ public class SearchBarTest2 {
 		String searchTerm = "ahfousefalsclasunelffalj";
 		String searchURL = "https://www.ebay.com.au/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=" + searchTerm + "&_sacat=0";
 		driver.navigate().to(searchURL);
-		WebElement resultsElement = driver.findElement(By.xpath("//*[@id=\"srp-river-results-SEARCH_STATUS_MODEL_V2-w0\"]/div[2]/div[1]/div[1]/h1"));
+		WebElement resultsElement = driver.findElement(By.xpath("//h1[contains(text(),'result')]"));
 		assertEquals("0 results",resultsElement.getText());	
 	}
 	
@@ -80,7 +80,7 @@ public class SearchBarTest2 {
 		String searchTerm = "Headphones";
 		driver.findElement(By.xpath("//*[@id=\"gh-ac\"]")).sendKeys(searchTerm);
 		driver.findElement(By.xpath("//*[@id=\"gh-btn\"]")).click();
-		WebElement resultsElement = driver.findElement(By.xpath("//*[@id=\"srp-river-results-SEARCH_STATUS_MODEL_V2-w0\"]/div[2]/div[1]/div[1]/h1"));
+		WebElement resultsElement = driver.findElement(By.xpath("//h1[contains(text(),'result')]"));
 		assertThat(resultsElement.getText(),is(not("0 results")));
 	}
 	
@@ -96,7 +96,7 @@ public class SearchBarTest2 {
 		String searchTerm = "Headphones";
 		driver.findElement(By.xpath("//*[@id=\"gh-ac\"]")).sendKeys(searchTerm);
 		driver.findElement(By.xpath("//*[@id=\"gh-btn\"]")).click();
-		WebElement resultsElement = driver.findElement(By.xpath("//*[@id=\"srp-river-results-SEARCH_STATUS_MODEL_V2-w0\"]/div[2]/div[1]/div[1]/h1"));
+		WebElement resultsElement = driver.findElement(By.xpath("//h1[contains(text(),'result')]"));
 		assertThat(resultsElement.getText(),is(not("0 results")));
 	}
 	
@@ -108,7 +108,7 @@ public class SearchBarTest2 {
 		String searchTerm = "Headphones";
 		driver.findElement(By.xpath("//*[@id=\"gh-ac\"]")).sendKeys(searchTerm);
 		driver.findElement(By.xpath("//*[@id=\"gh-btn\"]")).click();
-		WebElement resultsElement = driver.findElement(By.xpath("//*[@id=\"srp-river-results-SEARCH_STATUS_MODEL_V2-w0\"]/div[2]/div[1]/div[1]/h1"));
+		WebElement resultsElement = driver.findElement(By.xpath("//h1[contains(text(),'result')]"));
 		assertThat(resultsElement.getText(),is(not("0 results")));
 		driver.findElement(By.xpath("//*[@id=\"srp-river-results-listing1\"]/div/div[1]/div/a[1]/div")).click();
 		driver.findElement(By.xpath("//*[@id=\"srp-river-results-listing1\"]/div/div[1]/div/a[1]/div")).click();
@@ -123,7 +123,7 @@ public class SearchBarTest2 {
 		String searchTerm = "Headphones";
 		driver.findElement(By.xpath("//*[@id=\"gh-ac\"]")).sendKeys(searchTerm);
 		driver.findElement(By.xpath("//*[@id=\"gh-btn\"]")).click();
-		WebElement resultsElement = driver.findElement(By.xpath("//*[@id=\"srp-river-results-SEARCH_STATUS_MODEL_V2-w0\"]/div[2]/div[1]/div[1]/h1"));
+		WebElement resultsElement = driver.findElement(By.xpath("//h1[contains(text(),'result')]"));
 		assertThat(resultsElement.getText(),is(not("0 results")));
 		driver.findElement(By.xpath("//*[@id=\"srp-river-results-listing1\"]/div/div[2]/a/h3")).click();
 		driver.findElement(By.xpath("//*[@id=\"srp-river-results-listing1\"]/div/div[2]/a/h3")).click();
@@ -138,7 +138,7 @@ public class SearchBarTest2 {
 		String searchTerm = "1/700 Watef Linw Beries Nj.360 Japaeese Nady liyht cruyser Sbigeru";
 		driver.findElement(By.xpath("//*[@id=\"gh-ac\"]")).sendKeys(searchTerm);
 		driver.findElement(By.xpath("//*[@id=\"gh-btn\"]")).click();
-		WebElement resultsElement = driver.findElement(By.xpath("//*[@id=\"srp-river-results-SEARCH_STATUS_MODEL_V2-w0\"]/div[2]/div[1]/div[1]/h1"));
+		WebElement resultsElement = driver.findElement(By.xpath("//h1[contains(text(),'result')]"));
 		String stringNumberOfResults = resultsElement.getText();
 		stringNumberOfResults = stringNumberOfResults.replaceAll("\\D+", "");
 		int intNumberOfResults = Integer.parseInt(stringNumberOfResults);

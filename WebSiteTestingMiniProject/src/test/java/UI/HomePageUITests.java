@@ -47,7 +47,8 @@ public class HomePageUITests {
 	public void beforeMethod() {
 		driver = new ChromeDriver();
 		driver.get("https://www.ebay.com.au/");
-		driver.manage().window().maximize();
+		
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	}
@@ -89,18 +90,12 @@ public class HomePageUITests {
 	 * Test Case ID: TC_UI_002
 	 */
 	@Test
-	public void testHomePageCarouselSliderPauseFunction() {
+	public void testHomePageCarouselSliderPauseFunction() throws InterruptedException {
 		WebElement sliderElements1 = driver.findElement(By.xpath("//*[@id=\"s2-carouselContainer\"]"));
 		String style1 = sliderElements1.getAttribute("style");
 		driver.findElement(By.xpath("//*[@id=\"s2\"]/div/button[2]")).click();
 
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		try {
-			// waits until timeout, as sliderElements1 will never be invisible
-			wait.until(ExpectedConditions.invisibilityOf(sliderElements1));
-		} catch (TimeoutException e) {
-			System.out.println("Timeout exception ( expected)");
-		}
+		Thread.sleep(5000);
 
 		WebElement sliderElements2 = driver.findElement(By.xpath("//*[@id=\"s2-carouselContainer\"]"));
 		String style2 = sliderElements2.getAttribute("style");
@@ -108,12 +103,7 @@ public class HomePageUITests {
 
 		driver.findElement(By.xpath("//*[@id=\"s2\"]/div/button[1]")).click();
 
-		try {
-			// waits until timeout, as sliderElements1 will never be invisible
-			wait.until(ExpectedConditions.invisibilityOf(sliderElements1));
-		} catch (TimeoutException e) {
-			System.out.println("Timeout exception ( expected)");
-		}
+		Thread.sleep(6000);
 
 		WebElement sliderElements3 = driver.findElement(By.xpath("//*[@id=\"s2-carouselContainer\"]"));
 		String style3 = sliderElements3.getAttribute("style");
@@ -161,11 +151,13 @@ public class HomePageUITests {
 	 * Test Case ID: TC_UI_005
 	 */
 	@Test
-	public void testHomePageHoverDropDownToggle() {
+	public void testHomePageHoverDropDownToggle() throws InterruptedException {
 
 		WebElement HoverCategoryLabel = driver.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]"));
 		WebElement HoverCategoryFlyout = driver.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]/div[2]"));
 		assertFalse(HoverCategoryFlyout.isDisplayed());
+		
+		Thread.sleep(3000);
 
 		Actions builder = new Actions(driver);
 		builder.moveToElement(HoverCategoryLabel).build().perform();
@@ -180,7 +172,7 @@ public class HomePageUITests {
 
 		assertTrue(HoverCategoryFlyout.isDisplayed());
 
-		builder.moveToElement(driver.findElement(By.xpath("//*[@id=\"gh-logo\"]")));
+		builder.moveToElement(driver.findElement(By.xpath("//*[@id=\"gh-logo\"]"))).build().perform();
 
 		try {
 			wait.until(ExpectedConditions.invisibilityOf(HoverCategoryFlyout));
@@ -196,12 +188,14 @@ public class HomePageUITests {
 	 * Test Case ID: TC_UI_006
 	 */
 	@Test
-	public void testHomePageHoverDropDownNavigation() {
+	public void testHomePageHoverDropDownNavigation() throws InterruptedException {
 		WebElement HoverCategoryLabel = driver.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]"));
 		WebElement HoverCategoryFlyout = driver.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]/div[2]"));
 		WebElement LinkInFlyout = driver
 				.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]/div[2]/div[1]/div[1]/ul/li[1]/a"));
 		assertFalse(HoverCategoryFlyout.isDisplayed());
+		
+		Thread.sleep(3000);
 
 		Actions builder = new Actions(driver);
 		builder.moveToElement(HoverCategoryLabel).build().perform();
