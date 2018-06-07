@@ -53,6 +53,9 @@ public class HomePageSearchBarSuggestionsTests {
 		driver.quit();
 	}
 	
+	/*
+	 * Test Case ID: TC_SB_017
+	 */
 	@Test
 	public void testHomePageSearchBarSugestionsIsPresent() {
 		WebElement searchBar = driver.findElement(By.xpath("//*[@id=\"gh-ac\"]"));
@@ -69,7 +72,9 @@ public class HomePageSearchBarSuggestionsTests {
 		assertTrue(suggestionsMenu.isDisplayed());
 	}
 	
-	
+	/*
+	 * Test Case ID: TC_SB_018
+	 */
 	@Test
 	public void testHomePageSearchBarSuggestionsToggling() {
 		WebElement searchBar = driver.findElement(By.xpath("//*[@id=\"gh-ac\"]"));
@@ -93,9 +98,6 @@ public class HomePageSearchBarSuggestionsTests {
 			e1.printStackTrace();
 		}
 		
-//		WebElement hideSuggestions = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"ui-id-1\"]/li[last()]")));
-//		wait.until(ExpectedConditions.visibilityOf(hideSuggestions));
-//		hideSuggestions.click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(), \"Hide eBay suggestions\")]")));
 		WebElement hideSuggestions = driver.findElement(By.xpath("//*[contains(text(), \"Hide eBay suggestions\")]"));
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[contains(text(), \"Hide eBay suggestions\")]"))));

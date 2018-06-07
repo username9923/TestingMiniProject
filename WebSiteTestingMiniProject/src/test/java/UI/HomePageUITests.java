@@ -40,65 +40,22 @@ public class HomePageUITests {
 	public void beforeTest() throws FileNotFoundException, IOException {
 		config.load(new FileInputStream(configFilePath));
 		System.setProperty("webdriver.chrome.driver", config.getProperty("chromeDriver"));
-		System.out.println("--Before Test--");
 	}
 
 	@BeforeMethod
 	public void beforeMethod() {
 		driver = new ChromeDriver();
 		driver.get("https://www.ebay.com.au/");
-		System.out.println("--Before Method--");
 	}
 
 	@AfterMethod
 	public void AfterMethod() {
 		driver.quit();
-		System.out.println("--After Method--");
 	}
 
-	@BeforeClass
-	public void beforeClass() {
-		System.out.println("--Before Class--");
-	}
-
-	@AfterClass
-	public void AfterClass() {
-		System.out.println("--After Class--");
-	}
-
-	@AfterTest
-	public void afterTest() {
-		System.out.println("--After Test--");
-	}
-
-	@Test
-	public void testHomePageLogoIsPresent() {
-		By locator = By.xpath("//*[@id=\"gh-logo\"]");
-		boolean isPresent = isElementPresent(driver, locator);
-		assertTrue(isPresent);
-	}
-
-	@Test
-	public void testHomePageSearchBarIsPresent() {
-		By locator = By.xpath("//*[@id=\"gh-ac\"]");
-		boolean isPresent = isElementPresent(driver, locator);
-		assertTrue(isPresent);
-	}
-
-	@Test
-	public void testHomePageSearchButtonIsPresent() {
-		By locator = By.xpath("//*[@id=\"gh-btn\"]");
-		boolean isPresent = isElementPresent(driver, locator);
-		assertTrue(isPresent);
-	}
-
-	@Test
-	public void testHomePageCarouselSliderIsPresent() {
-		By locator = By.xpath("//*[@id=\"s2-carouselContainer\"]/div");
-		boolean isPresent = isElementPresent(driver, locator);
-		assertTrue(isPresent);
-	}
-
+	/*
+	 * Test Case ID: TC_UI_001
+	 */
 	@Test
 	public void testHomePageCarouselSliderNextFunction() {
 
@@ -108,8 +65,6 @@ public class HomePageUITests {
 
 		// WebElement currentSliderElement =
 		// sliderElements.findElement(By.cssSelector("[aria-hidden=false]"));
-
-		System.out.println("got the first");
 
 		driver.findElement(By.xpath("//*[@id=\"s2-4[0]\"]")).click();
 
@@ -126,12 +81,14 @@ public class HomePageUITests {
 		assertNotEquals(style3, style2);
 	}
 
+	/*
+	 * Test Case ID: TC_UI_002
+	 */
 	@Test
 	public void testHomePageCarouselSliderPauseFunction() {
 		WebElement sliderElements1 = driver.findElement(By.xpath("//*[@id=\"s2-carouselContainer\"]"));
 		String style1 = sliderElements1.getAttribute("style");
 		driver.findElement(By.xpath("//*[@id=\"s2\"]/div/button[2]")).click();
-		System.out.println("clicked pause");
 
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		try {
@@ -146,7 +103,6 @@ public class HomePageUITests {
 		assertEquals(style1, style2);
 
 		driver.findElement(By.xpath("//*[@id=\"s2\"]/div/button[1]")).click();
-		System.out.println("clicked play");
 
 		try {
 			// waits until timeout, as sliderElements1 will never be invisible
@@ -160,6 +116,9 @@ public class HomePageUITests {
 		assertNotEquals(style2, style3);
 	}
 
+	/*
+	 * Test Case ID: TC_UI_003
+	 */
 	@Test
 	public void testHomePageCategoryDropDownToggle() {
 		WebElement categoryDropdownButton = driver.findElement(By.xpath("//*[@id=\"gh\"]/table/tbody/tr/td[2]"));
@@ -178,6 +137,8 @@ public class HomePageUITests {
 
 	}
 
+	/*
+	 * Test Case ID: TC_UI_004	 */
 	@Test
 	public void testHomePageCategoryDropDownNavigation() {
 		WebElement categoryDropdownButton = driver.findElement(By.xpath("//*[@id=\"gh\"]/table/tbody/tr/td[2]"));
@@ -192,20 +153,11 @@ public class HomePageUITests {
 		assertThat(pageTitle, containsString("Collectables"));
 	}
 
+	/*
+	 * Test Case ID: TC_UI_005
+	 */
 	@Test
 	public void testHomePageHoverDropDownToggle() {
-		/*
-		 * WebElement web_Element_To_Be_Hovered =
-		 * webDriver.findElement(By.cssSelector(selector_For_Web_Element_To_Be_Hovered))
-		 * ; Actions builder = new Actions(getDriver());
-		 * builder.moveToElement(web_Element_To_Be_Hovered).build().perform();
-		 * 
-		 * WebDriverWait wait = new WebDriverWait(driver, 5);
-		 * wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(
-		 * selector_For_Element_To_Be_Click_After_Hover)));
-		 * driver.findElement(By.cssSelector(
-		 * selector_For_Element_To_Be_Click_After_Hover)).click();
-		 */
 
 		WebElement HoverCategoryLabel = driver.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]"));
 		WebElement HoverCategoryFlyout = driver.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]/div[2]"));
@@ -224,12 +176,6 @@ public class HomePageUITests {
 
 		assertTrue(HoverCategoryFlyout.isDisplayed());
 
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
 		builder.moveToElement(driver.findElement(By.xpath("//*[@id=\"gh-logo\"]")));
 
 		try {
@@ -240,14 +186,11 @@ public class HomePageUITests {
 
 		assertFalse(HoverCategoryFlyout.isDisplayed());
 
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
 	}
 
+	/*
+	 * Test Case ID: TC_UI_006
+	 */
 	@Test
 	public void testHomePageHoverDropDownNavigation() {
 		WebElement HoverCategoryLabel = driver.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]"));
@@ -272,19 +215,8 @@ public class HomePageUITests {
 		LinkInFlyout.click();
 
 		String pageTitle = driver.getTitle();
-		System.out.println(pageTitle);
 
 		assertThat(pageTitle, containsString("Women's Clothing"));
-
-	}
-
-	public boolean isElementPresent(WebDriver driver, By locator) {
-		try {
-			driver.findElement(locator);
-			return true;
-		} catch (NoSuchElementException e) {
-			return false;
-		}
 	}
 
 }

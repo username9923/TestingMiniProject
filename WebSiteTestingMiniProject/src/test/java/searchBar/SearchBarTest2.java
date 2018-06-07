@@ -46,6 +46,9 @@ public class SearchBarTest2 {
 		driver.quit();
 	}
 	
+	/*
+	 * Test Case ID: TC_SB_010
+	 */
 	@Test
 	public void TestSearchWhenSellersExists() {
 		String searchTerm = "Headphones";
@@ -55,6 +58,9 @@ public class SearchBarTest2 {
 		assertNotEquals("0 results",resultsElement.getText());
 	}
 	
+	/*
+	 * Test Case ID: TC_SB_011
+	 */
 	@Test
 	public void TestSearchWhenNoSellersExists() {
 		String searchTerm = "ahfousefalsclasunelffalj";
@@ -64,6 +70,9 @@ public class SearchBarTest2 {
 		assertEquals("0 results",resultsElement.getText());	
 	}
 	
+	/*
+	 * Test Case ID: TC_SB_012
+	 */
 	@Test 
 	public void TestSearchAfterBackFunction() {
 		driver.navigate().to("https://www.ebay.com.au/help/home");
@@ -75,6 +84,9 @@ public class SearchBarTest2 {
 		assertThat(resultsElement.getText(),is(not("0 results")));
 	}
 	
+	/*
+	 * Test Case ID: TC_SB_013
+	 */
 	@Test 
 	public void TestSearchAfterForwardFunction() {
 		driver.navigate().to("https://www.ebay.com.au/help/home");
@@ -88,6 +100,9 @@ public class SearchBarTest2 {
 		assertThat(resultsElement.getText(),is(not("0 results")));
 	}
 	
+	/*
+	 * Test Case ID: TC_SB_014
+	 */
 	@Test
 	public void TestNavigateToListingThroughImage() {
 		String searchTerm = "Headphones";
@@ -100,6 +115,9 @@ public class SearchBarTest2 {
 		assertThat(driver.getCurrentUrl(), containsString("https://www.ebay.com.au/itm/"));
 	}
 	
+	/*
+	 * Test Case ID: TC_SB_015
+	 */
 	@Test
 	public void TestNavigateToListingThroughText() {
 		String searchTerm = "Headphones";
@@ -112,6 +130,9 @@ public class SearchBarTest2 {
 		assertThat(driver.getCurrentUrl(), containsString("https://www.ebay.com.au/itm/"));
 	}
 	
+	/*
+	 * Test Case ID: TC_SB_016
+	 */
 	@Test
 	public void TestSearchResultsEqualsNumberOfListings() {
 		String searchTerm = "1/700 Watef Linw Beries Nj.360 Japaeese Nady liyht cruyser Sbigeru";
