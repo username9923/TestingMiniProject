@@ -20,6 +20,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import utility.SearchBarUtility;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -36,6 +39,8 @@ public class HomePageUITests {
 	String configFilePath = "src/test/java/config.properties";
 	Properties config = new Properties();
 	WebDriver driver = null;
+	SearchBarUtility sbu = null;
+
 
 	@BeforeTest
 	public void beforeTest() throws FileNotFoundException, IOException {
@@ -47,8 +52,9 @@ public class HomePageUITests {
 	public void beforeMethod() {
 		driver = new ChromeDriver();
 		driver.get("https://www.ebay.com.au/");
-		
-		//driver.manage().window().maximize();
+		sbu = new SearchBarUtility(driver);
+
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	}
@@ -63,7 +69,7 @@ public class HomePageUITests {
 	 */
 	@Test
 	public void testHomePageCarouselSliderNextFunction() {
-
+		
 		// driver.findElement(By.xpath("//*[@id=\"s2-carouselContainer\"]/div/div[@aria-hidden=\"false\"]"));
 		WebElement sliderElements1 = driver.findElement(By.xpath("//*[@id=\"s2-carouselContainer\"]"));
 		String style1 = sliderElements1.getAttribute("style");
@@ -80,10 +86,12 @@ public class HomePageUITests {
 		assertNotSame(style1, style2);
 
 		driver.findElement(By.xpath("//*[@id=\"s2-1[0]\"]")).click();
-
 		WebElement sliderElements3 = driver.findElement(By.xpath("//*[@id=\"s2-carouselContainer\"]"));
 		String style3 = sliderElements3.getAttribute("style");
 		assertNotEquals(style3, style2);
+		
+		driver.findElement(By.id("ElementID")).clear();
+	
 	}
 
 	/*
@@ -120,7 +128,7 @@ public class HomePageUITests {
 		String displayBeforeClick = categoryDropdownTable.getCssValue("display");
 		// assertThat(styleBeforeClick, is(equalTo("display: none;")));
 		assertEquals("none", displayBeforeClick);
-
+		sbu.waitForLoad(driver);
 		categoryDropdownButton.click();
 		String displayAfterClick = categoryDropdownTable.getCssValue("display");
 		assertEquals("block", displayAfterClick);
@@ -137,6 +145,7 @@ public class HomePageUITests {
 	public void testHomePageCategoryDropDownNavigation() {
 		WebElement categoryDropdownButton = driver.findElement(By.xpath("//*[@id=\"gh\"]/table/tbody/tr/td[2]"));
 		WebElement categoryDropdownTable = driver.findElement(By.xpath("//*[@id=\"gh-sbc-o\"]"));
+		sbu.waitForLoad(driver);
 		categoryDropdownButton.click();
 		// Click Collectables
 		driver.findElement(By.xpath("//*[@id=\"gh-sbc\"]/tbody/tr/td[1]/h3[1]/a")).click();
@@ -157,7 +166,7 @@ public class HomePageUITests {
 		WebElement HoverCategoryFlyout = driver.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]/div[2]"));
 		assertFalse(HoverCategoryFlyout.isDisplayed());
 		
-		Thread.sleep(3000);
+		sbu.waitForLoad(driver);
 
 		Actions builder = new Actions(driver);
 		builder.moveToElement(HoverCategoryLabel).build().perform();
@@ -169,7 +178,7 @@ public class HomePageUITests {
 		} catch (TimeoutException e) {
 			System.out.println("timeout exception");
 		}
-
+		
 		assertTrue(HoverCategoryFlyout.isDisplayed());
 
 		builder.moveToElement(driver.findElement(By.xpath("//*[@id=\"gh-logo\"]"))).build().perform();
@@ -195,7 +204,7 @@ public class HomePageUITests {
 				.findElement(By.xpath("//*[@id=\"s0-container\"]/li[3]/div[2]/div[1]/div[1]/ul/li[1]/a"));
 		assertFalse(HoverCategoryFlyout.isDisplayed());
 		
-		Thread.sleep(3000);
+		sbu.waitForLoad(driver);
 
 		Actions builder = new Actions(driver);
 		builder.moveToElement(HoverCategoryLabel).build().perform();

@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="searchBar.SearchBarTest">
+      <class name="searchBar.SearchBarTest1">
         <methods>
-          <include name="tearDown"/>
-          <include name="TC_SB_005"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
           <include name="beforeMethod"/>
+          <include name="search_for_product_with_no_listings_button_click"/>
+          <include name="methodTearDown"/>
         </methods>
-      </class> <!-- searchBar.SearchBarTest -->
+      </class> <!-- searchBar.SearchBarTest1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

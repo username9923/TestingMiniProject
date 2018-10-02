@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestAll]" parallel="none">
+  <test name="tests(failed)" parallel="none">
+    <classes>
+      <class name="searchBar.SearchBarTest2">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="TestSearchWhenNoSellersExists"/>
+          <include name="TestSearchAfterBackFunction"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- searchBar.SearchBarTest2 -->
+      <class name="UI.HomePageSearchBarSuggestionsTests">
+        <methods>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="testHomePageSearchBarSuggestionsToggling"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- UI.HomePageSearchBarSuggestionsTests -->
+      <class name="searchBar.SearchBarTest1">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="beforeMethod"/>
+          <include name="expensive_search_with_short_search_term_submit_with_enter"/>
+          <include name="expensive_search_with_long_search_term_submit_with_enter"/>
+          <include name="methodTearDown"/>
+        </methods>
+      </class> <!-- searchBar.SearchBarTest1 -->
+      <class name="UI.HomePageUITests">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- UI.HomePageUITests -->
+    </classes>
+  </test> <!-- tests(failed) -->
+</suite> <!-- Failed suite [TestAll] -->

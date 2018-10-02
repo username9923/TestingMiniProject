@@ -1,6 +1,9 @@
 package UI;
 
 import org.testng.annotations.Test;
+
+import utility.SearchBarUtility;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
@@ -28,11 +31,14 @@ public class HomePageSearchBarSuggestionsTests {
 	Properties config = new Properties();
 	
 	WebDriver driver;
+	SearchBarUtility sbu = null;
+
 	
 	@BeforeTest
 	public void setUp() {
 		String configFilePath = "src/test/java/config.properties";
 		Properties config = new Properties();
+		
 	}
 	
 	@BeforeMethod
@@ -41,6 +47,7 @@ public class HomePageSearchBarSuggestionsTests {
 
 		System.setProperty("webdriver.chrome.driver", config.getProperty("chromeDriver"));
 		driver = new ChromeDriver();
+		sbu = new SearchBarUtility(driver);
 		
 		driver.get("https://www.ebay.com.au/");
 		driver.manage().window().maximize();
@@ -79,7 +86,7 @@ public class HomePageSearchBarSuggestionsTests {
 	public void testHomePageSearchBarSuggestionsToggling() {
 		WebElement searchBar = driver.findElement(By.xpath("//*[@id=\"gh-ac\"]"));
 		searchBar.sendKeys("c");
-		
+		sbu.waitForLoad(driver);
 		WebElement suggestionsMenu = null;
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		try {
@@ -88,6 +95,7 @@ public class HomePageSearchBarSuggestionsTests {
 		} catch (TimeoutException e) {
 			System.out.println("Suggestions Timeout Exception 1");
 		}
+		
 		assertTrue(suggestionsMenu.isDisplayed());
 		
 		try {
@@ -99,8 +107,9 @@ public class HomePageSearchBarSuggestionsTests {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(), \"Hide eBay suggestions\")]")));
 		WebElement hideSuggestions = driver.findElement(By.xpath("//*[contains(text(), \"Hide eBay suggestions\")]"));
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[contains(text(), \"Hide eBay suggestions\")]"))));
+		sbu.waitForLoad(driver);
 		driver.findElement(By.xpath("//*[contains(text(), \"Hide eBay suggestions\")]")).click();
-
+		
 		assertFalse(suggestionsMenu.isDisplayed());
 		
 		WebElement showSuggestions = driver.findElement(By.xpath("//*[@id=\"ghAC-show\"]"));

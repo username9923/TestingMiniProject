@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll" parallel="none">
+
+	<test name="tests" >
+		<classes>
+			<class name="searchBar.SearchBarTest1" />
+			<class name="searchBar.SearchBarTest2" />
+			<class name="UI.HomePageSearchBarSuggestionsTests" />
+			<class name="UI.HomePageUITests" />
+		</classes>
+	</test>
+	
+
+</suite>

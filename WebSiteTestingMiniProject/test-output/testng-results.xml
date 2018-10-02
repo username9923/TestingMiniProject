@@ -1,61 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="46577" started-at="2018-06-02T08:56:24Z" finished-at="2018-06-02T08:57:11Z">
+  <suite name="Default suite" duration-ms="149348" started-at="2018-06-08T01:39:31Z" finished-at="2018-06-08T01:42:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="46577" started-at="2018-06-02T08:56:24Z" finished-at="2018-06-02T08:57:11Z">
-      <class name="searchBar.SearchBarTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="setUp" is-config="true" duration-ms="6343" started-at="2018-06-02T18:56:24Z" finished-at="2018-06-02T18:56:31Z">
+    <test name="Default test" duration-ms="149348" started-at="2018-06-08T01:39:31Z" finished-at="2018-06-08T01:42:01Z">
+      <class name="UI.HomePageUITests">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="beforeTest" is-config="true" duration-ms="15" started-at="2018-06-08T11:39:31Z" finished-at="2018-06-08T11:39:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="5122" started-at="2018-06-02T18:56:31Z" finished-at="2018-06-02T18:56:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_SB_001()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_001" duration-ms="4328" started-at="2018-06-02T18:56:36Z" finished-at="2018-06-02T18:56:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_SB_001 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="1944" started-at="2018-06-02T18:56:40Z" finished-at="2018-06-02T18:56:42Z">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="beforeMethod" is-config="true" duration-ms="19569" started-at="2018-06-08T11:39:31Z" finished-at="2018-06-08T11:39:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_SB_002()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_002" duration-ms="4530" started-at="2018-06-02T18:56:42Z" finished-at="2018-06-02T18:56:47Z">
+        <test-method status="PASS" signature="testHomePageCarouselSliderNextFunction()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="testHomePageCarouselSliderNextFunction" duration-ms="2111" started-at="2018-06-08T11:39:51Z" finished-at="2018-06-08T11:39:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_SB_002 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="1861" started-at="2018-06-02T18:56:47Z" finished-at="2018-06-02T18:56:48Z">
+        </test-method> <!-- testHomePageCarouselSliderNextFunction -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="AfterMethod" is-config="true" duration-ms="796" started-at="2018-06-08T11:39:53Z" finished-at="2018-06-08T11:39:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_SB_003()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_003" duration-ms="3340" started-at="2018-06-02T18:56:48Z" finished-at="2018-06-02T18:56:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_SB_003 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="2399" started-at="2018-06-02T18:56:52Z" finished-at="2018-06-02T18:56:54Z">
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="beforeMethod" is-config="true" duration-ms="25460" started-at="2018-06-08T11:39:54Z" finished-at="2018-06-08T11:40:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_SB_004()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_004" duration-ms="7065" started-at="2018-06-02T18:56:54Z" finished-at="2018-06-02T18:57:01Z">
+        <test-method status="PASS" signature="testHomePageCarouselSliderPauseFunction()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="testHomePageCarouselSliderPauseFunction" duration-ms="12702" started-at="2018-06-08T11:40:19Z" finished-at="2018-06-08T11:40:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_SB_004 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="beforeMethod" is-config="true" duration-ms="1642" started-at="2018-06-02T18:57:01Z" finished-at="2018-06-02T18:57:03Z">
+        </test-method> <!-- testHomePageCarouselSliderPauseFunction -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="AfterMethod" is-config="true" duration-ms="782" started-at="2018-06-08T11:40:32Z" finished-at="2018-06-08T11:40:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="beforeMethod" is-config="true" duration-ms="19636" started-at="2018-06-08T11:40:33Z" finished-at="2018-06-08T11:40:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TC_SB_005()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="TC_SB_005" duration-ms="6767" started-at="2018-06-02T18:57:03Z" finished-at="2018-06-02T18:57:10Z">
+        <test-method status="PASS" signature="testHomePageCategoryDropDownNavigation()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="testHomePageCategoryDropDownNavigation" duration-ms="7755" started-at="2018-06-08T11:40:52Z" finished-at="2018-06-08T11:41:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_SB_005 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:searchBar.SearchBarTest@675d3402]" name="tearDown" is-config="true" duration-ms="1188" started-at="2018-06-02T18:57:10Z" finished-at="2018-06-02T18:57:11Z">
+        </test-method> <!-- testHomePageCategoryDropDownNavigation -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="AfterMethod" is-config="true" duration-ms="818" started-at="2018-06-08T11:41:00Z" finished-at="2018-06-08T11:41:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- searchBar.SearchBarTest -->
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="beforeMethod" is-config="true" duration-ms="13690" started-at="2018-06-08T11:41:01Z" finished-at="2018-06-08T11:41:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testHomePageCategoryDropDownToggle()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="testHomePageCategoryDropDownToggle" duration-ms="862" started-at="2018-06-08T11:41:15Z" finished-at="2018-06-08T11:41:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageCategoryDropDownToggle -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="AfterMethod" is-config="true" duration-ms="727" started-at="2018-06-08T11:41:15Z" finished-at="2018-06-08T11:41:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="beforeMethod" is-config="true" duration-ms="17613" started-at="2018-06-08T11:41:16Z" finished-at="2018-06-08T11:41:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testHomePageHoverDropDownNavigation()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="testHomePageHoverDropDownNavigation" duration-ms="7581" started-at="2018-06-08T11:41:34Z" finished-at="2018-06-08T11:41:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageHoverDropDownNavigation -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="AfterMethod" is-config="true" duration-ms="832" started-at="2018-06-08T11:41:41Z" finished-at="2018-06-08T11:41:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="beforeMethod" is-config="true" duration-ms="13500" started-at="2018-06-08T11:41:42Z" finished-at="2018-06-08T11:41:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testHomePageHoverDropDownToggle()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="testHomePageHoverDropDownToggle" duration-ms="4095" started-at="2018-06-08T11:41:56Z" finished-at="2018-06-08T11:42:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageHoverDropDownToggle -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:UI.HomePageUITests@7823a2f9]" name="AfterMethod" is-config="true" duration-ms="760" started-at="2018-06-08T11:42:00Z" finished-at="2018-06-08T11:42:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+      </class> <!-- UI.HomePageUITests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
